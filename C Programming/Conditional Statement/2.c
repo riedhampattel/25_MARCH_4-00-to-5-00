@@ -9,7 +9,7 @@ int main()
 	printf("\nPress * for multiplication");
 	printf("\nPress / for division");
 	printf("\nPress %c for remainder",ch);
-	printf("\nEnter your choice = ");//s
+	printf("\nEnter your choice = ");//+
 	scanf(" %c",&choice);
 
 	switch(choice)
