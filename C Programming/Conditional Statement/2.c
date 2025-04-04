@@ -4,6 +4,7 @@ int main()
 	int n1,n2;
 	char ch = '%';
 	char choice;
+	up:
 	printf("\nPress + for addition");
 	printf("\nPress - for subtraction");
 	printf("\nPress * for multiplication");
@@ -52,6 +53,12 @@ int main()
 		default :
 			printf("\nInvalid input");
 		break;
+	}
+	printf("\nPress 'Y' to continue and 'N' to exit = ");
+	scanf(" %c",&choice);
+	if(choice=='y' || choice=='Y')
+	{
+		goto up;
 	}
 	return 0;
 }
