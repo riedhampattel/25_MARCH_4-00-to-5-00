@@ -2,7 +2,8 @@
 int main()
 {
 	int i;
-	for(i=16;i<=15;i++);
+	printf("\nFor loop : ");
+	for(i=11;i<=15;i++);
 	{
 		printf("\nTops Technologies");//5
 	}
@@ -26,7 +27,7 @@ int main()
 	}
 	
 	printf("\nWhile loop :");
-	i=11;
+	i=1;
 	while(i<=5)
 	{
 		printf("\nTops Technologies");//5
@@ -34,11 +35,11 @@ int main()
 	}
 	
 	printf("\ndo while loop :");
-	i=10;
+	i=0;
 	do
 	{
 		printf("\nTops Technologies");//5
-		i++;
+		i++;//11
 	}while(i<=4);
 	return 0;
 }
