@@ -8,7 +8,8 @@ struct Stuent
 int num,choice,i;
 int index=0;
 int main()
-{	up:
+{	
+	up:
 	printf("\n1.Add data");
 	printf("\n2.Display all");
 	printf("\n3.Display Particullar");
@@ -39,6 +40,8 @@ int main()
 
 void add_data()
 {
+	FILE *fp;
+	fp=fopen("student.txt","a");
 	printf("\nEnter the number of students = ");
 	scanf("%d",&num);
 	for(i=0;i<num;i++)
@@ -46,11 +49,15 @@ void add_data()
 		printf("\nEnter the details of student %d",i+1);
 		printf("\nId = ");
 		scanf("%d",&s[index].id);
+		fprintf(fp,"%d\t",s[index].id);
 		printf("\nName = ");
 		scanf("%s",&s[index].name);
+		fprintf(fp,"%s\t",s[index].name);
 		printf("\nPercentage = ");
 		scanf("%f",&s[index].percentage);
+		fprintf(fp,"%.2f",s[index].percentage);
 		printf("\n");
+		fprintf(fp,"\n");
 		index++;
 	}
 }
