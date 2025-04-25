@@ -60,30 +60,50 @@ void add_data()
 		fprintf(fp,"\n");
 		index++;
 	}
+	fclose(fp);
 }
 
 void display()
 {
-	printf("\n\nid        name        percentage");
+	FILE *fp;
+	fp = fopen("student.txt","r");
+	char str[100];
+	printf("\n\nid    name    percentage");
 	printf("\n-----------------------------------");
-	for(i=0;i<index;i++)
+	while(fgets(str,sizeof(str),fp))
 	{
-		printf("\n%d        %s           %.2f",s[i].id,s[i].name,s[i].percentage);
+		printf("\n%s",str);
 	}
+	fclose(fp);
 }
 
 display_particullar()
 {
-	int id;
+	FILE *fp;
+	fp = fopen("student.txt","r");
+	char id[5];
+	int flag,check=1;
+	char str[100];
 	printf("\nEnter the id you want to search for = ");
-	scanf("%d",&id);
-	for(i=0;i<index;i++)
+	scanf("%s",&id);//101\0
+	while(fgets(str,sizeof(str),fp))
 	{
-		if(s[i].id==id)
+		flag = 1;
+		for(i=0;id[i]!='\0';i++)
 		{
-			printf("\n\nid        name        percentage");
-			printf("\n-----------------------------------");
-			printf("\n%d        %s           %.2f",s[i].id,s[i].name,s[i].percentage);
+			if(id[i]!=str[i])
+			{
+				flag = 0;
+			}
 		}
+		if(flag==1)
+		{
+			printf("%s",str);
+			check = 0;
+		}
+	}
+	if(check==1)
+	{
+		printf("\nData not found");
 	}
 }
