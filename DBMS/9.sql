@@ -25,21 +25,21 @@ end;
 
 declare --block1
 x number := 10;
+begin
+	declare --block2
+	y number := 20;
 	begin
-		declare --block2
-		y number := 20;
-			begin
-				declare --block3
-				z number := 30;
-					begin
-						dbms_output.put_line('value of x = '||x);
-						dbms_output.put_line('value of y = '||y);
-						dbms_output.put_line('value of z = '||z);
-					end; --block3
-				dbms_output.put_line('value of x = '||x);
-				dbms_output.put_line('value of y = '||y);
-			end;
+		declare --block3
+		z number := 30;
+		begin
+			dbms_output.put_line('value of x = '||x);
+			dbms_output.put_line('value of y = '||y);
+			dbms_output.put_line('value of z = '||z);
+		end; --block3
 		dbms_output.put_line('value of x = '||x);
+		dbms_output.put_line('value of y = '||y);
+	end;
+	dbms_output.put_line('value of x = '||x);
 end;
 
 -- simple if...else
