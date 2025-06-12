@@ -87,3 +87,100 @@ begin
 		end if;
 	end if;
 end;
+
+-- simple loop
+declare
+	i number := 1;
+begin
+	loop
+		dbms_output.put_line('TOPS Technologies'); --4
+		i := i + 1;--5
+		if i>5 then
+            exit;
+		end if;
+	end loop;
+end;
+
+declare
+	i number := 1;
+begin
+	loop
+		dbms_output.put_line('TOPS Technologies');
+		i := i+1;
+		exit when i>5;
+	end loop;
+end;
+
+-- for loop
+begin
+	for x in 1..5 loop
+		dbms_output.put_line(x||'. TOPS Technologies');
+	end loop;
+end;
+
+declare
+	i number := 5;
+begin
+	for x in 1..5 loop
+		dbms_output.put_line(i||'. TOPS Technologies');
+		i := i-1;
+	end loop;
+end;
+
+-- while loop
+declare 
+	i number := 1;
+begin
+	while i<=5 loop
+		dbms_output.put_line('TOPS Technologies');
+		i := i + 1;
+	end loop;
+end;
+
+/*
+*
+* *
+* * *
+* * * *
+* * * * *
+*/
+
+declare
+	row number := 5;
+begin
+	for i in 1..row loop
+		for j in 1..i loop
+			dbms_output.put('* ');
+		end loop;
+		dbms_output.put_line('');
+	end loop;
+end;
+
+-- factorial 
+declare
+	num number := 3;
+	fact number := 1;
+begin
+	for x in 1..num loop
+		fact := fact * x;
+	end loop;
+	dbms_output.put_line('Factorial of '||num||' is = '||fact);
+end;
+
+-- prime number
+declare
+	num number := 17;
+	flag number := 1;
+begin
+	for x in 2..(num/2) loop
+		if mod(num,x)=0 then
+			flag := 0;
+			exit;
+		end if;
+	end loop;
+	if flag=1 then
+		dbms_output.put_line('It is a prime number');
+	else
+		dbms_output.put_line('It is not a prime number');
+	end if;
+end;
