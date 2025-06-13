@@ -184,3 +184,35 @@ begin
 		dbms_output.put_line('It is not a prime number');
 	end if;
 end;
+
+-- explicit cursor
+declare
+	EID employees.employee_id%type;
+	FNAME employees.first_name%type;
+	LNAME employees.last_name%type;
+	SAL employees.salary%type;
+	cursor emp is select employee_id,first_name,last_name,salary from employees;
+begin
+	open emp;
+		loop 
+			fetch emp into EID,FNAME,LNAME,SAL;
+				dbms_output.put_line(EID || ' - '||FNAME||' - '||LNAME||' - '||SAL);
+			exit when emp%notfound;
+		end loop;
+		close emp;
+end;
+
+-- implicit cursor
+declare
+    row_number number := 0;
+begin
+    update employees set salary = salary + 5000 where department_id = 900;
+	if sql%found then
+        row_number := sql%rowcount;
+	else
+        dbms_output.put_line('No data updated');
+	end if;
+	dbms_output.put_line('Updated employees = '||row_number);
+end;
+
+select * from employees;
