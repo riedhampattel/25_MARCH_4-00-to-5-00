@@ -1,0 +1,141 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+header
+{
+    display: flex;
+    justify-content: space-between;
+    margin: 0rem 5rem;
+}
+#logo
+{
+    height: 130px;
+}
+nav
+{
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    margin-top: 3rem;
+}
+nav a
+{
+    margin-right: 2rem;
+}
+.main-content
+{
+    margin: 2rem 5rem;
+}
+.main-content h1
+{
+    font-size: 50px;
+    color: purple;
+}
+.main-content h3
+{
+    font-size: 30px;
+    color: rgb(58, 3, 210);
+    margin-top: 0.5rem;
+}
+.description
+{
+    margin: 0rem 5rem;
+    width: 470px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.social-icons
+{
+    font-size: 30px;
+    margin: 3rem 5rem;
+}
+.social-icons a
+{
+    margin-right: 2rem;
+}
+.image img
+{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    filter: drop-shadow(3px 5px 20px black);
+}
+.image
+{
+    margin-top: -30rem;
+    margin-left: 50rem;
+}
+@media (max-width : 450px)
+{
+    body
+    {
+        background-color: white;
+    }
+    header
+    {
+        display: block;
+        margin: 0rem 2rem;
+    }
+    #logo
+    {
+        height: 130px;
+        margin-left: 7rem;
+    }
+    nav
+    {
+        margin-top: 0rem;
+        margin-left: 1.5rem;
+    }
+    nav a
+    {
+        margin-right: 0.5rem;
+        font-size: 24px;
+    }
+.main-content
+{
+    margin: 20rem 0rem 0rem 1rem;
+    text-align: center;
+}
+.main-content h1
+{
+    font-size: 50px;
+    color: purple;
+}
+.main-content h3
+{
+    font-size: 30px;
+    color: rgb(58, 3, 210);
+    margin-top: 0.5rem;
+}
+.description
+{
+    margin: 1rem 1.8rem;
+    width: 370px;
+    text-align: center;
+}
+.social-icons
+{
+    font-size: 30px;
+    margin: 3rem 6rem;
+    text-align: center;
+}
+.social-icons a
+{
+    margin-right: 0.8rem;
+}
+.image img
+{
+    height: 275px;
+    width: 275px;
+    border-radius: 50%;
+    filter: drop-shadow(3px 5px 20px black);
+}
+.image
+{
+    margin-top: -56rem;
+    margin-left: 4.5rem;
+}
+}
